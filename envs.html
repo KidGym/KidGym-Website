@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="content here">
+  <meta name="keywords" content="Environment, MLLM, Agent, Reasoning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A 2D Grid-based Game Benchmark for Multimodal Large Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+    
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<section class="hero" style="background-color: rgba(0, 0, 0, 0.7);">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="header-background">
+            <img src="static/images/classification.gif"/>
+            <img src="static/images/counting.gif"/>
+            <img src="static/images/memory.gif"/>
+            <img src="static/images/sorting.gif"/>
+            <img src="static/images/memory_sequence.gif"/>
+            <img src="static/images/puzzle.gif"/>
+        </div>
+        <div class="header-overlay"></div>
+        <div class="header-content" style="height: 896px">
+          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A 2D Grid-based Game Benchmark for Multimodal Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">GridAgent Team</a>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-left" id="name"></h2>
+        <img id="display-image"/>
+        <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Description</h2>
+        <div class="content has-text-justified">
+          <p id="description"></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Action Space</h2>
+        <div class="content has-text-justified">
+          <p id="action-space"> </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Goal</h2>
+        <div class="content has-text-justified">
+          <p id="goal"> </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4 has-text-left">Termination</h2>
+        <div class="content has-text-justified">
+          <p id="termination"> </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="column has-text-centered">
+    <a href="index.html" class="button is-link">返回主页</a>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>
+
+<script>
+  information = {
+    "classification": {
+      "name": "Classification",
+      "description": "In this task, the agent is required to classify the objects in the grid into different categories based on their attributes. The agent must identify and categorize the objects correctly to complete the task.",
+      "action_space": "pick up the item with label {item_id}<br>put the item from backpack {backpack_id} into the basket with label {basket_id}",
+      "goal": "Place {item_1} in the {color_1} basket and {item_2} in the {color_2} basket.",
+      "termination_conditions": "The task is terminated when the agent has correctly classified all objects in the grid.",
+      "image": "./static/images/classification.gif",
+    },
+    "counting": {
+      "name": "Counting",
+      "description": "In this task, the agent is required to pick up a certain number of items.",
+      "action_space": "pick up the {item} with label {item_id}<br>I have already collected {number} {item}(s)",
+      "goal": "Collect {number} {item}(s) from the scene and place them in the backpack. Make sure you have gathered exactly this amount, no more and no less. Once you have collected this number of {item}s, select the action: “I have already collected {number} {item}s.",
+      "termination_conditions": "The task is terminated when the agent has correctly collected a certain number of items.",
+      "image": "./static/images/counting.gif",
+    },
+    "decode": {
+      "name": "Decode",
+      "description": "In this task, the agent is required to learn the association rules from a provided code table and using these learned correspondences to select the correct item.",
+      "action_space": "choose the item with label {item_id}",
+      "goal": "There are arrow-connected items with one-to-one correspondence(s) shown on the left margin and a target item displayed in the black box in the upper left corner. You need to select the correct corresponding item for the target based on the correspondence(s).",
+      "termination_conditions": "The task is terminated when the agent has correctly selected the item.",
+      "image": "./static/images/deocde.gif",
+    },
+    "selection": {
+      "name": "Selection",
+      "description": "In this task, the agent is required to memorize the items in the hint bar and collect all of them in the game frame.",
+      "action_space": "continue<br>choose {type} with label {obj_id}",
+      "goal": "In the first image, some items will be shown on the left margin that you need to remember. In the following images, several random items will be generated in the scene, and your need to select the items you recall. If you understand the rules, select the 'continue' action to start the task.",
+      "termination_conditions": "The task is terminated when the agent has correctly collected all the objects.",
+      "image": "./static/images/memory.gif",
+    },
+    "puzzle": {
+      "name": "Puzzle",
+      "description": "In this task, the agent is required to reconstruct a abstract target image by assembling scattered puzzle pieces from its backpack based on the visual reference provided in the hint bar.",
+      "action_space": "place the piece from backpack {backpack_id} into the grid at position {symbol}",
+      "goal": "There is a target item shown on the left margin. You need to fill the correct piece(s) from the backpack to complete the missing part(s) of the frame in the scene, ensuring they match and align with the target item.",
+      "termination_conditions": "The task is terminated when the agent has correctly reconstructed the abstract target image.",
+      "image": "./static/images/puzzle.gif",
+    },
+    "maze": {
+      "name": "Maze",
+      "description": "In this task, the agent is required to use the keys to unlock corresponding doors to get the diamond.",
+      "action_space": "obtain object with label {obj_id}<br>use the key in backpack {backpack_id} to unlock door with label {obj_id}",
+      "goal": "There is a diamond shown in the scene, and you need to obtain the diamond. When your path is blocked by a door, you can use a key of the same color to unlock it. Note: You must pick up the key first before you can use it to unlock doors.",
+      "termination_conditions": "The task is terminated when the agent has successfully got the diamond.",
+      "image": "./static/images/sequence.gif",
+    },
+    "placement": {
+      "name": "Placement",
+      "description": "In this task, the agent is required to interpret the placement rules and place the item in the specified location.",
+      "action_space": "place {place_obj_name} at grid {grid_id}",
+      "goal": "A direction will be provided: {orientation}. Determine its opposite direction, and then place {place_obj_name} in the corresponding location around {center_name}.",
+      "termination_conditions": "The task is terminated when the agent has correctly placed the item in the specified location.",
+      "image": "./static/images/orientation.gif",
+    },
+    "sorting": {
+      "name": "Sorting",
+      "description": "In this task, the agent is required to sort items based on a provided rule, even if the rule contradicts real-world knowledge.",
+      "action_space": "place {type} from backpack {backpack_id} at grid {obj_name}",
+      "goal": "{rule} Rank the {type} in the backpack from {property} in position I, II.",
+      "termination_conditions": "The task is terminated when the agent has correctly sorted the items.",
+      "image": "./static/images/sorting.gif",
+    },
+    "filling": {
+      "name": "Filling",
+      "description": "In this task, the agent is required to reconstruct a figurative animal by assembling scattered pieces from its backpack based on the visual reference provided in the hint bar.",
+      "action_space": "place the piece from backpack {backpack_id} into the grid at position {symbol}",
+      "goal": "There is a target item shown on the left margin. You need to fill the correct piece(s) from the backpack to complete the missing part(s) of the frame in the scene, ensuring they match and align with the target item.",
+      "termination_conditions": "The task is terminated when the agent has correctly reconstructed the figurative animal.",
+      "image": "./static/images/filling.gif",
+    },
+    "filling-star": {
+      "name": "Filling*",
+      "description": "In this task, the agent is required to remember a figurative animal in the hint bar and reconstruct it by assembling scattered pieces from its backpack.",
+      "action_space": "continue<br>place the piece from backpack {backpack_id} into the grid at position {symbol}",
+      "goal": "In the first image, a target item will be shown on the left margin that you need to remember. In the following images, the target item will not be shown. You need to fill the correct piece(s) from the backpack to complete the missing part(s) of the frame in the scene, ensuring they match and align with the target item. If you understand the rules, choose 'continue' to begin the task.",
+      "termination_conditions": "The task is terminated when the agent has correctly reconstructed the animal.",
+      "image": "./static/images/filling.gif",
+    },
+    "decode-star": {
+      "name": "Decode*",
+      "description": "In this task, the agent is required to not only to learn but to remember the association rules from a provided code table and using these learned correspondences to select the correct item.",
+      "action_space": "continue<br>choose the item with label {item_id}",
+      "goal": "In the first image, arrow-connected items with one-to-one correspondence(s) will be shown on the left margin that you need to remember. In the following images, the correspondence(s) will not be shown, and a target item will be generated in the black box in the upper left corner. You need to select the correct corresponding item for the target based on the pairing you remembered in the first image. If you understand the rules, choose 'continue' to begin the task.",
+      "termination_conditions": "The task is terminated when the agent has correctly selected the item.",
+      "image": "./static/images/memory_decode.gif",
+    },
+    "maze-star": {
+      "name": "Maze*",
+      "description": "In this task, the agent is required to remember the location of the diamond and use the keys to unlock corresponding doors to get the diamond.",
+      "action_space": "continue<br>use the key in backpack {backpack_id} to unlock door with label {obj_id}",
+      "goal": "In the first image, a diamond will be shown in the scene that you need to remember its location. In the following images, the diamond will not be shown and several treasure boxes will be generated in the scene. You must choose to open the treasure box located at the diamond's original position to obtain the diamond. When your path is blocked by a door, you can use a key of the same color to unlock it. Note: You must obtain the key before you can use it to unlock doors. If you understand the rules, choose 'continue' to begin the task.",
+      "termination_conditions": "The task is terminated when the agent has correctly got the diamond.",
+      "image": "./static/images/memory_sequence.gif",
+    }
+  }
+
+
+    window.onload = function() {
+      const hash = window.location.hash.substring(1);
+      const name = document.getElementById("name");
+      const description = document.getElementById("description");
+      const image = document.getElementById("display-image");
+      const action_space = document.getElementById("action-space");
+      const objective = document.getElementById("goal");
+      const termination_conditions = document.getElementById("termination");
+
+      image.src = information[hash].image;
+      name.innerHTML = information[hash].name;
+      description.innerHTML = information[hash].description;
+      action_space.innerHTML = information[hash].action_space;
+      objective.innerHTML = information[hash].goal;
+      termination_conditions.innerHTML = information[hash].termination_conditions;
+    }
+</script>

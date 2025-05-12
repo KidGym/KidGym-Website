@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="content here">
+  <meta name="keywords" content="Environment, MLLM, Agent, Reasoning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A 2D Grid-based Game Benchmark for Multimodal Large Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+    
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<section class="hero" style="background-color: rgba(0, 0, 0, 0.7);">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="header-background">
+            <img src="static/images/classification.gif"/>
+            <img src="static/images/counting.gif"/>
+            <img src="static/images/memory.gif"/>
+            <img src="static/images/sorting.gif"/>
+            <img src="static/images/memory_sequence.gif"/>
+            <img src="static/images/puzzle.gif"/>
+        </div>
+        <div class="header-overlay"></div>
+        <div class="header-content" style="height: 896px">
+          <h1 class="title is-1 publication-title" style="color: #f2f2f2">GridAgent: A 2D Grid-based Game Benchmark for Multimodal Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">GridAgent Team</a>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Multimodal Large Language Models (MLLMs) integrate the linguistic capabilities of LLMs with the ability to process multimodal data, enabling them to address a wider array of tasks. However, a comprehensive and standardized benchmark for evaluating MLLMs' complex visual reasoning performance in multimodal tasks has yet to be established. We introduce GridAgent, a versatile 2D grid-based framework that serves as a benchmark for assessing five essential capabilities of MLLMs: \textbf{execution, perception reasoning, memory, learning, and planning}. The framework includes twelve unique game tasks specifically designed to avoid overlap with the model's pre-training corpus. Each task targets at least one core competency and is enriched with diverse semantic information. Additionally, the game layouts are randomly generated, ensuring a more rigorous and authentic assessment of the MLLMs' capabilities. Experimental results indicate that although certain MLLMs excel in specific capabilities, none exhibit a comprehensive skill set comparable to the human baseline.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Environments</h2>
+        <div class="env-grid">
+          <div class="env-container">
+            <a href="envs.html#classification">
+              <img src="static/images/classification_00.png"/>
+            </a>
+            <a href="envs.html#classification">Classification</a>
+          </div>
+          <div class="env-container">
+            <a href="envs.html#counting">
+              <img src="static/images/counting_10.png"/>
+            </a>
+            <a href="envs.html#counting">Counting</a>
+          </div>
+            <div class="env-container">
+            <a href="envs.html#decode">
+              <img src="static/images/decode_0.png"/>
+            </a>
+            <a href="envs.html#decode">Decode</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#selection">
+              <img src="static/images/memory_10.png"/>
+            </a>
+            <a href="envs.html#selection">Selection</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#puzzle">
+              <img src="static/images/puzzle_00.png"/>
+            </a>
+            <a href="envs.html#puzzle">Puzzle</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#maze">
+              <img src="static/images/sequence_0.png"/>
+            </a>
+            <a href="envs.html#maze">Maze</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#placement">
+              <img src="static/images/orientation_0.png"/>
+            </a>
+            <a href="envs.html#placement">Placement</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#sorting">
+              <img src="static/images/sorting_10.png"/>
+            </a>
+            <a href="envs.html#sorting">Sorting</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#filling">
+              <img src="static/images/filling_0.png"/>
+            </a>
+            <a href="envs.html#filling">Filling</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#filling-star">
+              <img src="static/images/filling_cantsee.png"/>
+            </a>
+            <a href="envs.html#filling-star">Filling*</a>
+            </div>
+            <div class="env-container">
+            <a href="envs.html#decode-star">
+              <img src="static/images/memory_decode_1.png"/>
+            </a>
+            <a href="envs.html#decode-star">Decode*</a>
+            </div>
+            <div class="env-container">
+              <a href="envs.html#maze-star">
+                <img src="static/images/memory_sequence_10.png"/>
+              </a>
+              <a href="envs.html#maze-star">Maze*</a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+          <div class="checkboxes" style="display: grid; grid-template-columns: repeat(3, 1fr); ">
+            <label class="checkbox">
+              <input type="checkbox" id="human" value="human" />
+              Human Expert
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="gpt" value="gpt"/>
+              GPT-4o
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="gemini" value="gemini"/>
+              Gemini
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="internvl" value="internvl"/>
+              Internvl-chat-v1.5
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="phi" value="phi"/>
+              Phi3-vision-128k-instruct
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="deepseek" value="deepseek"/>
+              DeepSeek-vl-7b-chat
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="internlm" value="internlm"/>
+              InternLM-Xcomposer2-7b-chat
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="llava" value="llava"/>
+              Llava-v1.6-Mistral-7b
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="qwen" value="qwen"/>
+              Qwen2-vl-7b
+            </label>
+
+            <!-- <label class="checkbox">
+              <input type="checkbox" id="random" value="random"/>
+              Random
+            </label> -->
+          </div>
+          <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</html>
+
+<script>
+  dataset = {
+    'human': {
+      label: 'Human Expert',
+      data: [100, 100, 100, 100, 100],
+      fill: false,
+      backgroundColor: 'rgba(32, 32, 32, 0.2)',
+      borderColor: 'rgb(32, 32, 32)',
+      pointBackgroundColor: 'rgb(32, 32, 32)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(32, 32, 32)'
+    },
+    'gpt': {
+      label: 'GPT-4o',
+      data: [44, 66, 81, 61, 80],
+      fill: false,
+      backgroundColor: 'rgba(99, 132, 200, 0.2)',
+      borderColor: 'rgb(99, 132, 255)',
+      pointBackgroundColor: 'rgb(99, 132, 255)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(99, 132, 255)'
+    },
+    'gemini': {
+      label: 'Gemini',
+      data: [37, 58, 65, 53, 75],
+      fill: false,
+      backgroundColor: 'rgba(255, 159, 64, 0.2)',
+      borderColor: 'rgb(255, 159, 64)',          
+      pointBackgroundColor: 'rgb(255, 159, 64)', 
+      pointBorderColor: '#fff',                
+      pointHoverBackgroundColor: '#fff',         
+      pointHoverBorderColor: 'rgb(255, 159, 64)'
+    },
+    'phi': {
+      label: 'Phi3-vision-128k-instruct',
+      data: [33, 38, 28, 34, 53],
+      fill: false,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgb(255, 99, 132)',
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    },
+    'internvl': {
+      label: 'internvl-chat-v1-5',
+      data: [31, 46, 34, 46, 75],
+      fill: false,
+      backgroundColor: 'rgba(99, 200, 132, 0.2)',
+      borderColor: 'rgb(99, 255, 132)',
+      pointBackgroundColor: 'rgb(99, 255, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(99, 255, 132)'
+    },
+    'deepseek': {
+      label: 'DeepSeek-vl-7b-chat',
+      data: [33, 39, 24, 39, 54],
+      fill: false,
+      backgroundColor: 'rgba(155, 0, 132, 0.2)',
+      borderColor: 'rgb(155, 99, 132)',
+      pointBackgroundColor: 'rgb(155, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(155, 99, 132)'
+    },
+    'internlm': {
+      label: 'InternLM-Xcomposer2-7b-chat',
+      data: [31, 39, 22, 32, 52],
+      fill: false,
+      backgroundColor: 'rgba(0, 200, 200, 0.2)',
+      borderColor: 'rgb(200, 200, 200)',
+      pointBackgroundColor: 'rgb(200, 200, 200)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(200, 200, 200)'
+    },
+    'llava': {
+      label: 'Llava-v1.6-Mistral-7b',
+      data: [30, 35, 25, 29, 50],
+      fill: false,
+      backgroundColor: 'rgba(155, 155, 32, 0.2)',
+      borderColor: 'rgb(155, 155, 32)',
+      pointBackgroundColor: 'rgb(155, 155, 32)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(155, 155, 32)'
+    },
+    'qwen': {
+      label: 'Qwen2-vl-7b',
+      data: [37, 45, 32, 45, 56],
+      fill: false,
+      backgroundColor: 'rgba(200, 99, 200, 0.2)',
+      borderColor: 'rgb(255, 99, 255)',
+      pointBackgroundColor: 'rgb(255, 99, 255)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 255)'
+    },
+  }
+
+  const ctx = document.getElementById('myChart');
+  console.log(ctx);
+  
+  const data = {
+    labels: [
+      'Perception Reasoning',
+      'Execution',
+      'Memory',
+      'Learning',
+      'Planning'
+    ],
+    datasets: []
+  };
+  
+  const chart = new Chart(ctx, {
+    type: 'radar',
+    data: data,
+    options: {
+      scales: {
+        r: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 40,
+        }
+      }
+    }
+  });
+
+  const allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+  
+  allCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      const selectedCheckboxes = Array.from(allCheckboxes).filter(function(checkbox) {
+        return checkbox.checked;
+      });
+  
+      const selectedDatasets = selectedCheckboxes.map(function(checkbox) {
+        return dataset[checkbox.value];
+      });
+      
+      data.datasets = selectedDatasets;
+      chart.update();
+    });
+  });
+
+
+</script>
