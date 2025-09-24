@@ -227,12 +227,12 @@
 
             <label class="checkbox">
               <input type="checkbox" id="gemini" value="gemini"/>
-              Gemini-2.0
+              Gemini-2.5
             </label>
 
             <label class="checkbox">
               <input type="checkbox" id="claude" value="claude"/>
-              Claude3.7
+              Claude-3.7
             </label>
 
             <label class="checkbox">
@@ -242,22 +242,22 @@
 
             <label class="checkbox">
               <input type="checkbox" id="qwen7b" value="qwen7b"/>
-              Qwen2.5-VL(7B)
+              QwenVL-2.5(7B)
             </label>
 
             <label class="checkbox">
               <input type="checkbox" id="qwen72b" value="qwen72b"/>
-              Qwen2.5-VL(72B)
+              QwenVL-2.5(72B)
             </label>
 
             <label class="checkbox">
               <input type="checkbox" id="internvl8b" value="internvl8b"/>
-              InternVL-2.5(8B)
+              InternVL-3(8B)
             </label>
 
             <label class="checkbox">
               <input type="checkbox" id="internvl78b" value="internvl78b"/>
-              InternVL-2.5(78B)
+              InternVL-3(78B)
             </label>
 
             <!-- <label class="checkbox">
@@ -345,7 +345,7 @@
   dataset = {
     'o3': {
       label: 'o3',
-      data: [92, 67, 95, 27, 32],
+      data: [92, 67, 95, 27, 36],
       fill: false,
       backgroundColor: 'rgba(32, 32, 32, 0.2)',
       borderColor: 'rgb(32, 32, 32)',
@@ -356,7 +356,7 @@
     },
     'gpt4o': {
       label: 'GPT-4o',
-      data: [27, 49, 64, 4, 17],
+      data: [27, 49, 64, 4, 23],
       fill: false,
       backgroundColor: 'rgba(99, 132, 200, 0.2)',
       borderColor: 'rgb(99, 132, 255)',
@@ -366,8 +366,8 @@
       pointHoverBorderColor: 'rgb(99, 132, 255)'
     },
     'gemini': {
-      label: 'Gemini-2.0',
-      data: [39, 47, 74, 3, 14],
+      label: 'Gemini-2.5',
+      data: [59, 50, 79, 13, 21],
       fill: false,
       backgroundColor: 'rgba(255, 159, 64, 0.2)',
       borderColor: 'rgb(255, 159, 64)',          
@@ -377,8 +377,8 @@
       pointHoverBorderColor: 'rgb(255, 159, 64)'
     },
     'claude': {
-      label: 'Claude3.7',
-      data: [68, 46, 78, 18, 23],
+      label: 'Claude-3.7',
+      data: [68, 46, 78, 18, 20],
       fill: false,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgb(255, 99, 132)',
@@ -388,8 +388,8 @@
       pointHoverBorderColor: 'rgb(255, 99, 132)'
     },
     'deepseek': {
-      label: 'DeepSeek-VL-2',
-      data: [12, 13, 20, 7, 10],
+      label: 'DeepSeekVL-2',
+      data: [12, 13, 20, 7, 11],
       fill: false,
       backgroundColor: 'rgba(155, 0, 132, 0.2)',
       borderColor: 'rgb(155, 99, 132)',
@@ -399,8 +399,8 @@
       pointHoverBorderColor: 'rgb(155, 99, 132)'
     },
     'qwen7b': {
-      label: 'Qwen2.5-VL(7B)',
-      data: [12, 16, 19, 0, 9],
+      label: 'QwenVL-2.5(7B)',
+      data: [12, 16, 19, 0, 12],
       fill: false,
       backgroundColor: 'rgba(99, 200, 132, 0.2)',
       borderColor: 'rgb(99, 255, 132)',
@@ -410,8 +410,8 @@
       pointHoverBorderColor: 'rgb(99, 255, 132)'
     },
     'qwen72b': {
-      label: 'Qwen2.5-VL(72B)',
-      data: [26, 47, 54, 6, 12],
+      label: 'QwenVL-2.5(72B)',
+      data: [26, 47, 54, 6, 16],
       fill: false,
       backgroundColor: 'rgba(0, 200, 200, 0.2)',
       borderColor: 'rgb(200, 200, 200)',
@@ -421,8 +421,8 @@
       pointHoverBorderColor: 'rgb(200, 200, 200)'
     },
     'internvl8b': {
-      label: 'InternVL-2.5(8B)',
-      data: [14, 11, 18, 1, 9],
+      label: 'InternVL-3(8B)',
+      data: [14, 11, 18, 1, 10],
       fill: false,
       backgroundColor: 'rgba(155, 155, 32, 0.2)',
       borderColor: 'rgb(155, 155, 32)',
@@ -432,8 +432,8 @@
       pointHoverBorderColor: 'rgb(155, 155, 32)'
     },
     'internvl78b': {
-      label: 'InternVL-2.5(78B)',
-      data: [19, 21, 26, 6, 10],
+      label: 'InternVL-3(78B)',
+      data: [19, 21, 26, 6, 13],
       fill: false,
       backgroundColor: 'rgba(200, 99, 200, 0.2)',
       borderColor: 'rgb(255, 99, 255)',
