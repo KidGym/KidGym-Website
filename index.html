@@ -60,7 +60,7 @@
           <h1 class="title is-1 publication-title" style="color: #f2f2f2">Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">KidGym Team</a>
+              <a href="https://keunhong.com">Hengwei Ye, Yuanting Guan, Yuxuan Ge, Tianying Zhu, Zhenhan Guan, Yijia Zhong, Yijing Zhang, Han Zhang, Yingna Wu, Zheng Tian</a>
             </span>
           </div>
 
@@ -492,6 +492,10 @@
       data.datasets = selectedDatasets;
       chart.update();
     });
+  });
+
+  window.addEventListener('load', function() {
+    allCheckboxes.forEach(checkbox => checkbox.dispatchEvent(new Event('change')));
   });
 
 
